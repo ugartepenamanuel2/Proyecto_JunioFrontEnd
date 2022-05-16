@@ -16,6 +16,7 @@ export class CrearProductoComponent implements OnInit {
   constructor(private fb: FormBuilder,
   private router: Router, private toastr: ToastrService  ) {
     this.productoForm = this.fb.group({
+      id: ['', Validators.required],
       producto: ['', Validators.required],
       modelo: ['', Validators.required],
       categoria: ['', Validators.required],
@@ -36,6 +37,7 @@ export class CrearProductoComponent implements OnInit {
   
 
     const PRODUCTO: Producto = {
+      id: this.productoForm.get('id')?.value,
       nombre: this.productoForm.get('producto')?.value,
       modelo: this.productoForm.get('modelo')?.value,
       categoria: this.productoForm.get('categoria')?.value,
