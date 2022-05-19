@@ -14,10 +14,10 @@
         </div>
     </div>
     <div class="mb-3">
-        <input type="text" formControlName="producto"
-        class="form-control form-control-lg" placeholder="Producto">
+        <input type="text" formControlName="nombre"
+        class="form-control form-control-lg" placeholder="Nombre">
         <div class="text-danger" *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched">
-            <span>El nombre del producto es un campo <strong>obligatorio</strong></span>
+            <span>El nombre  es un campo <strong>obligatorio</strong></span>
         </div>
     </div>
     <div class="mb-3">
