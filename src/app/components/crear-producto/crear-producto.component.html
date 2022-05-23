@@ -9,14 +9,14 @@
     <div class="mb-3">
         <input type="text" formControlName="id"
         class="form-control form-control-lg" placeholder="id">
-        <div class="text-danger" *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched">
+        <div class="text-danger" *ngIf="productoForm.get('id')?.hasError('required') && productoForm.get('id')?.touched">
             <span>El nombre del id es un campo <strong>obligatorio</strong></span>
         </div>
     </div>
     <div class="mb-3">
-        <input type="text" formControlName="nombre"
-        class="form-control form-control-lg" placeholder="Nombre">
-        <div class="text-danger" *ngIf="productoForm.get('producto')?.hasError('required') && productoForm.get('producto')?.touched">
+        <input type="text" formControlName="marca"
+        class="form-control form-control-lg" placeholder="Marca">
+        <div class="text-danger" *ngIf="productoForm.get('marca')?.hasError('required') && productoForm.get('marca')?.touched">
             <span>El nombre  es un campo <strong>obligatorio</strong></span>
         </div>
     </div>

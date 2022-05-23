@@ -11,7 +11,7 @@
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
+                        <th scope="col">Marca</th>
                         <th scope="col">Modelo</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Gama</th>
@@ -20,36 +20,20 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ordenador</td>
-                        <td>Sobremesa</td>
-                        <td>Alta</td>
-                        <td>500</td>
-                        <td><i class="fa-solid fa-trash"></i>
+                      <tr *ngFor="let producto of listProducto">
+                        <th scope="row">{{ producto.id }}</th>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.modelo }}</td>
+                        <td>{{ producto.categoria }}</td>
+                        <td>{{ producto.gama }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td><i (click)="eliminarProducto(producto.id)" class="fa-solid fa-trash"></i>
                           <i class="fa-solid fa-file-pen"></i>
                         </td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Ordenador</td>
-                        <td>Sobremesa</td>
-                        <td>Alta</td>
-                        <td>500</td>
-                        <td><i class="fa-solid fa-trash"></i>
-                          <i class="fa-solid fa-file-pen"></i></td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Ordenador</td>
-                        <td>Sobremesa</td>
-                        <td>Alta</td>
-                        <td>500</td>
-                        <td><i class="fa-solid fa-trash"></i>
-                          <i class="fa-solid fa-file-pen"></i></td>
-                      </tr>
                     </tbody>
                   </table>
+                  
             </div>
         </div>
     </div>
