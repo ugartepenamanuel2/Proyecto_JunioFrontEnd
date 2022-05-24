@@ -29,6 +29,12 @@ guardarProducto(PRODUCTO: tProducto): Observable<any> {
 
 }
 
+obtenerProducto(id: String): Observable<any> {
+
+  return this.http.get(this.url + '/producto/editarProducto/' + id);
+
+}
+
 
 
 }

@@ -2,3 +2,9 @@
     cursor: pointer;
     margin-left: 12px;
 }
+
+.fa-button{
+    cursor: pointer;
+    margin-left: 12px;
+    size :12px; 
+}

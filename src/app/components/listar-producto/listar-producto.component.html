@@ -6,12 +6,13 @@
         <div class="card">
             <div class="card-body text-center">
                 <span class="titulo">Listado de producto</span>
-                <button class="btn btn-success float-end" routerLink="/crear-producto">Nuevo</button>
+                <button class="btn btn-success float-end fa-button" routerLink="/crear-producto">Nuevo</button> 
+                <button class="btn btn-secondary btn-lg float-start" routerLink="/home">Volver</button>
                 <table class="table table-striped mt-3">
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Marca</th>
+                        <th scope="col">Nombre</th>
                         <th scope="col">Modelo</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Gama</th>
@@ -28,7 +29,7 @@
                         <td>{{ producto.gama }}</td>
                         <td>{{ producto.precio }}</td>
                         <td><i (click)="eliminarProducto(producto.id)" class="fa-solid fa-trash"></i>
-                          <i class="fa-solid fa-file-pen"></i>
+                          <i [routerLink]="['/editar-producto', producto.id]" class="fa-solid fa-file-pen"></i>
                         </td>
                       </tr>
                     </tbody>
