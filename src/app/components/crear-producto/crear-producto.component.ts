@@ -52,12 +52,11 @@ export class CrearProductoComponent implements OnInit {
 
 
 
-    this._productoService.guardarProducto(PRODUCTO).subscribe(data => {
+    this._productoService.guardarProducto(PRODUCTO).subscribe(data =>  {
       
-      this.toastr.success('Este producto fue registrado con exito', 'El producto fue registrado');
-      this.router.navigate(['/']);
     })
-    
+    this.toastr.success('Este producto fue registrado con exito', 'El producto fue registrado');
+      this.router.navigate(['/listar-producto']);
 
   }
 

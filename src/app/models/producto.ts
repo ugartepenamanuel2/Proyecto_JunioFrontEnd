@@ -21,7 +21,7 @@ export class Producto {
 
 
 export type tProducto = {
-    id:number,
+    id:string,
     nombre: string,
     modelo: string,
     categoria: string,

@@ -10,13 +10,25 @@ import { AppComponent } from './app.component';
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
 import { ListarProductoComponent } from './components/listar-producto/listar-producto.component';
 import { HomeComponent } from './components/home/home.component';
+import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
+import { ListarClienteComponent } from './components/listar-cliente/listar-cliente.component';
+import { CrearEmpleadoComponent } from './components/crear-empleado/crear-empleado.component';
+import { ListarEmpleadoComponent } from './components/listar-empleado/listar-empleado.component';
+import { CrearVentaComponent } from './components/crear-venta/crear-venta.component';
+import { ListarVentaComponent } from './components/listar-venta/listar-venta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearProductoComponent,
     ListarProductoComponent,
-    HomeComponent
+    HomeComponent,
+    CrearClienteComponent,
+    ListarClienteComponent,
+    CrearEmpleadoComponent,
+    ListarEmpleadoComponent,
+    CrearVentaComponent,
+    ListarVentaComponent
   ],
   imports: [
     BrowserModule,
