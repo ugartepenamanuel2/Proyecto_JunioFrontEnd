@@ -16,6 +16,11 @@ import { CrearEmpleadoComponent } from './components/crear-empleado/crear-emplea
 import { ListarEmpleadoComponent } from './components/listar-empleado/listar-empleado.component';
 import { CrearVentaComponent } from './components/crear-venta/crear-venta.component';
 import { ListarVentaComponent } from './components/listar-venta/listar-venta.component';
+import { InioCrearProductosComponent } from './components/inio-crear-productos/inio-crear-productos.component';
+import { NavComponent } from './components/nav/nav.component';
+import { CrearSobremesaComponent } from './components/inio-crear-productos/crear-sobremesa/crear-sobremesa.component';
+import { CrearPortatilComponent } from './components/inio-crear-productos/crear-portatil/crear-portatil.component';
+import { CrearMovilComponent } from './components/inio-crear-productos/crear-movil/crear-movil.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { ListarVentaComponent } from './components/listar-venta/listar-venta.com
     CrearEmpleadoComponent,
     ListarEmpleadoComponent,
     CrearVentaComponent,
-    ListarVentaComponent
+    ListarVentaComponent,
+    InioCrearProductosComponent,
+    NavComponent,
+    CrearSobremesaComponent,
+    CrearPortatilComponent,
+    CrearMovilComponent
   ],
   imports: [
     BrowserModule,

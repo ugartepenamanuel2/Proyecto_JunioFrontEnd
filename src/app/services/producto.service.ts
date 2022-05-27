@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tProducto } from '../models/producto';
+import { tMovil, tProducto, tSobremesa } from '../models/producto';
 
 @Injectable({
   providedIn: 'root'
@@ -25,14 +25,26 @@ eliminarProductos(id: String): Observable<any> {
 guardarProducto(PRODUCTO: tProducto): Observable<any> {
 
   return this.http.post(this.url + '/producto/crearProducto' , PRODUCTO);
+}
 
+crearSobremesa(SOBREMESA: tSobremesa): Observable<any> {
+
+  return this.http.post(this.url + '/producto/crearSobremesa' , SOBREMESA);
+}
+
+crearMovil(MOVIL: tMovil): Observable<any> {
+
+  return this.http.post(this.url + '/producto/crearMovil' , MOVIL);
+}
+
+obtenerProducto(codProducto: String): Observable<any> {
+
+  return this.http.get(this.url + '/verProducto/' + codProducto);
 
 }
 
-obtenerProducto(id: String): Observable<any> {
-
-  return this.http.get(this.url + '/producto/editarProducto/' + id);
-
+editarMovil(codProducto: string, MOVIL: tMovil):Observable<any>{
+  return this.http.put(this.url + '/editarMovil/' + codProducto, MOVIL);
 }
 
 

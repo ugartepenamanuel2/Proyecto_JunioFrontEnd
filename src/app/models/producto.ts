@@ -21,10 +21,44 @@ export class Producto {
 
 
 export type tProducto = {
-    id:string,
+    _codProducto:string,
+    _nombre: string,
+    _modelo: string,
+    _categoria: string,
+    _gama: string,
+    _precio: number,
+    _tipoPlaca: string,
+    _pantalla:string,
+    _bateria:string
+}
+
+export type tSobremesa = {
+    codProducto:string,
     nombre: string,
     modelo: string,
     categoria: string,
     gama: string,
-    precio: number
+    precio: number,
+    tipoPlaca: string
 }
+
+export type tPortatil = {
+    codProducto:string,
+    nombre: string,
+    modelo: string,
+    categoria: string,
+    gama: string,
+    precio: number,
+    bateria: string
+}
+
+export type tMovil = {
+    codProducto:string,
+    nombre: string,
+    modelo: string,
+    categoria: string,
+    gama: string,
+    precio: number,
+    pantalla:string
+}
+

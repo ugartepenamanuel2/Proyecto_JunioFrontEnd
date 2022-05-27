@@ -40,7 +40,7 @@ export class CrearProductoComponent implements OnInit {
 
     console.log(this.productoForm)
 
-
+/*
     const PRODUCTO: tProducto = {
       id: this.productoForm.get('id')?.value,
       nombre: this.productoForm.get('nombre')?.value,
@@ -48,13 +48,11 @@ export class CrearProductoComponent implements OnInit {
       categoria: this.productoForm.get('categoria')?.value,
       gama: this.productoForm.get('gama')?.value,
       precio: this.productoForm.get('precio')?.value,
-    };
+    };*/
 
 
 
-    this._productoService.guardarProducto(PRODUCTO).subscribe(data =>  {
-      
-    })
+   
     this.toastr.success('Este producto fue registrado con exito', 'El producto fue registrado');
       this.router.navigate(['/listar-producto']);
 

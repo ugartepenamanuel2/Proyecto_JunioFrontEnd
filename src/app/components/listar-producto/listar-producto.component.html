@@ -1,4 +1,4 @@
-
+<app-nav></app-nav>
 <div class ="container mt-5">
 
    <div class="row">
@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body text-center">
                 <span class="titulo">Listado de producto</span>
-                <button class="btn btn-success float-end fa-button" routerLink="/crear-producto">Nuevo</button> 
+                <button class="btn btn-success float-end fa-button" routerLink="/inicio-crear-productos">Nuevo Producto</button> 
                 <button class="btn btn-secondary btn-lg float-start" routerLink="/home">Volver</button>
                 <table class="table table-striped mt-3">
                     <thead>
@@ -17,19 +17,24 @@
                         <th scope="col">Categoria</th>
                         <th scope="col">Gama</th>
                         <th scope="col">Precio</th>
-                        <th scope="col"></th>
+                        <th scope="col">Tipo de placa</th>
+                        <th scope="col">Pantalla</th>
+                        <th scope="col">Bateria</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let producto of listProducto">
-                        <th scope="row">{{ producto.id }}</th>
-                        <td>{{ producto.nombre }}</td>
-                        <td>{{ producto.modelo }}</td>
-                        <td>{{ producto.categoria }}</td>
-                        <td>{{ producto.gama }}</td>
-                        <td>{{ producto.precio }}</td>
-                        <td><i (click)="eliminarProducto(producto.id)" class="fa-solid fa-trash"></i>
-                          <i [routerLink]="['/editar-producto', producto.id]" class="fa-solid fa-file-pen"></i>
+                        <th scope="row">{{ producto._codProducto }}</th>
+                        <td>{{ producto._nombre }}</td>
+                        <td>{{ producto._modelo }}</td>
+                        <td>{{ producto._categoria }}</td>
+                        <td>{{ producto._gama }}</td>
+                        <td>{{ producto._precio }}</td>
+                        <td>{{ producto._tipoPlaca }}</td>
+                        <td>{{ producto._pantalla }}</td>
+                        <td>{{ producto._bateria }}</td>
+                        <td><i (click)="eliminarProducto(producto._codProducto)" class="fa-solid fa-trash"></i>
+                          <i [routerLink]="['/editar-movil', producto._codProducto]" class="fa-solid fa-file-pen"></i>
                         </td>
                       </tr>
                     </tbody>
