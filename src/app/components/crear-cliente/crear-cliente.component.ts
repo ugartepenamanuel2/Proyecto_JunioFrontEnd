@@ -62,9 +62,9 @@ esEditar() {
     this._clienteService.obtenerCliente(this.dni).subscribe((data) => {
       console.log(data)
         this.clienteForm.setValue({
-          _dni:data._dni,
-          _nombre: data._nombre,
-          _edad: data._edad
+          dni:data._dni,
+          nombre: data._nombre,
+          edad: data._edad
           
         });
       });
