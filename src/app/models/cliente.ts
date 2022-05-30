@@ -1,7 +1,7 @@
 export class Cliente {
-    private _dni:string;
-    private _nombre:string;
-    private _edad:number;
+    public _dni:string;
+    public _nombre:string;
+    public _edad:number;
    
     
     

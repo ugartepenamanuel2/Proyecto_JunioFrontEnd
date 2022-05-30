@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'listar-venta', component: ListarVentaComponent},
   {path: 'listar-empleado', component: ListarEmpleadoComponent},
   {path: 'editar-cliente/:dni', component: CrearClienteComponent},
-  {path: 'editar-venta/:cod_compra', component: CrearVentaComponent},
+  {path: 'editar-venta/:_cod_compra', component: CrearVentaComponent},
   {path: 'editar-empleado/:dni', component: CrearEmpleadoComponent},
   {path: 'crear-cliente', component: CrearClienteComponent},
   {path: 'crear-venta', component: CrearVentaComponent},

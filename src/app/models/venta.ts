@@ -1,9 +1,9 @@
-export class venta {
-    private _cod_compra:number;
-    private _comprador:string;
-    private _vendedor:string;
-    private _producto:string;
-    private _precio:number;
+export class Venta {
+    public _cod_compra:number;
+    public _comprador:string;
+    public _vendedor:string;
+    public _producto:string;
+    public _precio:number;
     
     
     constructor(

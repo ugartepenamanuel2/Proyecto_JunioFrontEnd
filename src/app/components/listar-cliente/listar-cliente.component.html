@@ -17,13 +17,12 @@
                        </tr>
                      </thead>
                      <tbody>
-                       <tr>
-                         <th scope="row">49132809W</th>
-                         <td>Manuel Pablo</td>
-                         <td>19</td>
-                        
-                         <td><i class="fa-solid fa-trash"></i>
-                           <i class="fa-solid fa-file-pen"></i>
+                      <tr *ngFor="let cliente of listCliente">
+                         <th scope="row">{{ cliente._dni }}</th>
+                         <td>{{ cliente._nombre}}</td>
+                         <td>{{ cliente._edad }}</td>
+                        <td><i (click)="eliminarCliente(cliente._dni)" class="fa-solid fa-trash"></i>
+                          <i [routerLink]="['/editar-cliente', cliente._dni]"class="fa-solid fa-file-pen"></i>
                          </td>
                        </tr>
                      </tbody>

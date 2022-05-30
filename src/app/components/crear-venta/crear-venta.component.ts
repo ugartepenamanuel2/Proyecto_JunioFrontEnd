@@ -13,8 +13,8 @@ import { VentaService } from 'src/app/services/venta.service';
 })
 export class CrearVentaComponent implements OnInit {
   ventaForm: FormGroup;
-  titulo = 'Crear venta';
-  cod_compra: string | null;
+  titulo = 'Crear Venta';
+  codigo: any | null;
 
   constructor(private fb: FormBuilder,
     private router: Router, private toastr: ToastrService, 
@@ -29,16 +29,16 @@ export class CrearVentaComponent implements OnInit {
       
 
     })
-    this.cod_compra = this.aRouter.snapshot.paramMap.get('cod_compra');
+    this.codigo = this.aRouter.snapshot.paramMap.get('_cod_compra');
   }
 
   ngOnInit(): void {
+    this.esEditar();
   }
 
 
   agregarVenta() {
 
-    console.log(this.ventaForm)
 
     const VENTA: tVenta = {
       cod_compra: this.ventaForm.get('cod_compra')?.value,
@@ -48,7 +48,42 @@ export class CrearVentaComponent implements OnInit {
       precio: this.ventaForm.get('precio')?.value,
       
     };
+    
+    
+    
+    if (this.codigo !== null) {
+      this._ventaService
+        .editVenta(this.codigo, VENTA)
+        .subscribe((data) => {
+          this.router.navigate(['/listar-venta']);
+        });
+    } else {
+      this._ventaService
+        .guardarVenta(VENTA)
+        .subscribe((data) => {
+          this.toastr.success('Venta creada con exito !!');
+          this.router.navigate(['/listar-venta']);
+        });
+    }
+   
+  
+}
 
+esEditar() {
+  if (this.codigo !==  null) {
+    this.titulo = 'Editar Venta';
+    
+    this._ventaService.obtenerVenta(this.codigo).subscribe((data) => {
+      console.log(data)
+        this.ventaForm.setValue({
+          cod_compra:data._cod_compra,
+          comprador: data._comprador,
+          vendedor: data._vendedor,
+          producto: data._producto,
+          precio: data._precio
+        });
+      });
+  }
 }
 
 

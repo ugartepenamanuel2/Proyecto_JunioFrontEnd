@@ -5,7 +5,7 @@
          <div class="card">
              <div class="card-body text-center">
                  <span class="titulo">Listado de ventas</span>
-                 <button class="btn btn-success float-end fa-button" routerLink="/crear-ventas">Nuevo</button> 
+                 <button class="btn btn-success float-end fa-button" routerLink="/crear-venta">Nuevo</button> 
                  <button class="btn btn-secondary btn-lg float-start" routerLink="/home">Volver</button>
                  <table class="table table-striped mt-3">
                      <thead>
@@ -20,13 +20,13 @@
                      </thead>
                      <tbody>
                        <tr *ngFor="let venta of listVenta">
-                         <th scope="row">{{venta.cod_compra}}</th>
-                         <td>{{venta.comprador}}</td>
-                         <td>{{venta.vendedor}}</td>
-                         <td>{{venta.producto}}</td>
-                         <td>{{venta.precio}}</td>
-                         <td><i class="fa-solid fa-trash"></i>
-                           <i class="fa-solid fa-file-pen"></i>
+                         <th scope="row">{{venta._cod_compra}}</th>
+                         <td>{{venta._comprador}}</td>
+                         <td>{{venta._vendedor}}</td>
+                         <td>{{venta._producto}}</td>
+                         <td>{{venta._precio}}</td>
+                         <td><i (click)="eliminarVenta(venta._cod_compra)" class="fa-solid fa-trash"></i>
+                           <i [routerLink]="['/editar-venta', venta._cod_compra]"class="fa-solid fa-file-pen"></i>
                          </td>
                        </tr>
                      </tbody>

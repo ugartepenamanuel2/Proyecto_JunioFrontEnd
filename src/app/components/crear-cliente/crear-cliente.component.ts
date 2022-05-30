@@ -31,6 +31,7 @@ export class CrearClienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.esEditar();
   }
 
   agregarCliente() {
@@ -45,8 +46,30 @@ export class CrearClienteComponent implements OnInit {
       
     };
 
+    this._clienteService.guardarCliente(CLIENTE).subscribe( data => {
+      this.toastr.success('Este cliente fue registrado con exito', 'El cliente fue registrado');
+      this.router.navigate(['/listar-cliente']);
+    
+    })
+
+
 }
 
+esEditar() {
+  if (this.dni !==  null) {
+    this.titulo = 'Editar Cliente';
+    
+    this._clienteService.obtenerCliente(this.dni).subscribe((data) => {
+      console.log(data)
+        this.clienteForm.setValue({
+          _dni:data._dni,
+          _nombre: data._nombre,
+          _edad: data._edad
+          
+        });
+      });
+  }
+}
 
 
 }
