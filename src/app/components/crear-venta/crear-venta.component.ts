@@ -55,6 +55,7 @@ export class CrearVentaComponent implements OnInit {
       this._ventaService
         .editVenta(this.codigo, VENTA)
         .subscribe((data) => {
+          this.toastr.info('Venta fue editado correctamente !!');
           this.router.navigate(['/listar-venta']);
         });
     } else {

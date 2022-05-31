@@ -25,5 +25,7 @@ export type tEmpleado = {
     nombre: string,
     edad: number,
     especialidades: string,
-    sueldo: number
+    sueldo: number,
+    num_reparaciones: string,
+    horario: string
 }

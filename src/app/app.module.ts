@@ -21,6 +21,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { CrearSobremesaComponent } from './components/inio-crear-productos/crear-sobremesa/crear-sobremesa.component';
 import { CrearPortatilComponent } from './components/inio-crear-productos/crear-portatil/crear-portatil.component';
 import { CrearMovilComponent } from './components/inio-crear-productos/crear-movil/crear-movil.component';
+import { InioCrearEmpleadosComponent } from './components/inio-crear-empleados/inio-crear-empleados.component';
+import { CrearInformaticoComponent } from './components/inio-crear-empleados/crear-informatico/crear-informatico.component';
+import { CrearDependienteComponent } from './components/inio-crear-empleados/crear-dependiente/crear-dependiente.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { CrearMovilComponent } from './components/inio-crear-productos/crear-mov
     NavComponent,
     CrearSobremesaComponent,
     CrearPortatilComponent,
-    CrearMovilComponent
+    CrearMovilComponent,
+    InioCrearEmpleadosComponent,
+    CrearInformaticoComponent,
+    CrearDependienteComponent
   ],
   imports: [
     BrowserModule,

@@ -44,6 +44,8 @@ export class CrearEmpleadoComponent implements OnInit {
       edad: this.empleadoForm.get('edad')?.value,
       especialidades: this.empleadoForm.get('especialidades')?.value,
       sueldo: this.empleadoForm.get('sueldo')?.value,
+      horario: this.empleadoForm.get('horario')?.value,
+      num_reparaciones: this.empleadoForm.get('num_reparaciones')?.value,
       
     };
 

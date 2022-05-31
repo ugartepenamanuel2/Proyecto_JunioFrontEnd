@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.component';
-import { CrearEmpleadoComponent } from './components/crear-empleado/crear-empleado.component';
+
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
 import { CrearVentaComponent } from './components/crear-venta/crear-venta.component';
 import { HomeComponent } from './components/home/home.component';
+import { CrearDependienteComponent } from './components/inio-crear-empleados/crear-dependiente/crear-dependiente.component';
+import { CrearInformaticoComponent } from './components/inio-crear-empleados/crear-informatico/crear-informatico.component';
+import { InioCrearEmpleadosComponent } from './components/inio-crear-empleados/inio-crear-empleados.component';
 import { CrearMovilComponent } from './components/inio-crear-productos/crear-movil/crear-movil.component';
 import { CrearPortatilComponent } from './components/inio-crear-productos/crear-portatil/crear-portatil.component';
 import { CrearSobremesaComponent } from './components/inio-crear-productos/crear-sobremesa/crear-sobremesa.component';
@@ -23,6 +26,7 @@ const routes: Routes = [
 
   {path: 'crear-producto', component: CrearProductoComponent},
   {path: 'inicio-crear-productos', component: InioCrearProductosComponent},
+  {path: 'inicio-crear-empleados', component: InioCrearEmpleadosComponent},
   {path: 'crear-sobremesa', component: CrearSobremesaComponent},
   {path: 'crear-portatil', component: CrearPortatilComponent},
   {path: 'crear-movil', component: CrearMovilComponent},
@@ -36,10 +40,12 @@ const routes: Routes = [
   {path: 'listar-empleado', component: ListarEmpleadoComponent},
   {path: 'editar-cliente/:dni', component: CrearClienteComponent},
   {path: 'editar-venta/:_cod_compra', component: CrearVentaComponent},
-  {path: 'editar-empleado/:dni', component: CrearEmpleadoComponent},
+  
   {path: 'crear-cliente', component: CrearClienteComponent},
   {path: 'crear-venta', component: CrearVentaComponent},
-  {path: 'crear-empleado', component: CrearEmpleadoComponent},
+
+  {path: 'crear-informatico', component: CrearInformaticoComponent},
+  {path: 'crear-dependiente', component: CrearDependienteComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];
 
