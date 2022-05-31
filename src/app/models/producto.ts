@@ -49,7 +49,7 @@ export type tPortatil = {
     categoria: string,
     gama: string,
     precio: number,
-    bateria: string
+    bateria: number
 }
 
 export type tMovil = {

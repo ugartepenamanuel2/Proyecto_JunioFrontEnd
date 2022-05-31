@@ -1,1 +1,67 @@
-<p>crear-portatil works!</p>
+<app-nav></app-nav>
+<div class = "container mt-5"> 
+    <div class = "row"> 
+    <div class = "col-lg-6 offset-lg-3"> 
+    <div class = "card"> 
+    <div class = "card-body text-center">
+    <span class = "titulo"> {{ titulo | uppercase}}</span> 
+    <form class= "mt-3" [formGroup]="productoPortatilForm" (ngSubmit)="agregarProductoPortatil()">
+    
+        <div class="mb-3">
+            <input type="text" formControlName="codProducto"
+            class="form-control form-control-lg" placeholder="Codigo producto">
+            <div class="text-danger" *ngIf="productoPortatilForm.get('codProducto')?.hasError('required') && productoPortatilForm.get('codProducto')?.touched">
+                <span>El nombre del id es un campo <strong>obligatorio</strong></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" formControlName="nombre"
+            class="form-control form-control-lg" placeholder="Nombre">
+            <div class="text-danger" *ngIf="productoPortatilForm.get('nombre')?.hasError('required') && productoPortatilForm.get('nombre')?.touched">
+                <span>El nombre  es un campo <strong>obligatorio</strong></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" formControlName="modelo"
+            class="form-control form-control-lg" placeholder="Modelo">
+            <div class="text-danger" *ngIf="productoPortatilForm.get('modelo')?.hasError('required') && productoPortatilForm.get('modelo')?.touched">
+                <span>El nombre del modelo es un campo <strong>obligatorio</strong></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" formControlName="categoria"
+            class="form-control form-control-lg" placeholder="Categoria">
+            <div class="text-danger" *ngIf="productoPortatilForm.get('categoria')?.hasError('required') && productoPortatilForm.get('categoria')?.touched">
+                <span>El nombre de la categoria es un campo <strong>obligatorio</strong></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" formControlName="gama"
+            class="form-control form-control-lg" placeholder="Gama">
+            <div class="text-danger" *ngIf="productoPortatilForm.get('gama')?.hasError('required') && productoPortatilForm.get('gama')?.touched">
+                <span>El nombre de la gama es un campo <strong>obligatorio</strong></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="number" formControlName="precio"
+            class="form-control form-control-lg" placeholder="Precio">
+            <div class="text-danger" *ngIf="productoPortatilForm.get('precio')?.hasError('required') && productoPortatilForm.get('precio')?.touched">
+                <span>El numero del precio es un campo <strong>obligatorio</strong></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <input type="number" formControlName="bateria"
+            class="form-control form-control-lg" placeholder="Bateria">
+            <div class="text-danger" *ngIf="productoPortatilForm.get('pantalla')?.hasError('required') && productoPortatilForm.get('pantalla')?.touched">
+                <span>El tipo de placa es un campo <strong>obligatorio</strong></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-secondary btn-lg float-start" routerLink="/listar-producto">Volver</button>
+            <button type="submit" [disabled]="productoPortatilForm.invalid" class="btn btn-success btn-lg float-end">Finalizar</button>
+        </div>
+    
+    
+    </form>
+    </div> </div> </div> </div> </div>

@@ -31,7 +31,7 @@ export class CrearClienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.esEditar();
+    this.editCliente();
   }
 
   agregarCliente() {
@@ -46,30 +46,38 @@ export class CrearClienteComponent implements OnInit {
       
     };
 
-    this._clienteService.guardarCliente(CLIENTE).subscribe( data => {
-      this.toastr.success('Este cliente fue registrado con exito', 'El cliente fue registrado');
-      this.router.navigate(['/listar-cliente']);
-    
-    })
-
-
-}
-
-esEditar() {
-  if (this.dni !==  null) {
-    this.titulo = 'Editar Cliente';
-    
-    this._clienteService.obtenerCliente(this.dni).subscribe((data) => {
-      console.log(data)
-        this.clienteForm.setValue({
-          dni:data._dni,
-          nombre: data._nombre,
-          edad: data._edad
-          
+    if (this.dni !== null) {
+      this._clienteService
+        .editCliente(this.dni, CLIENTE)
+        .subscribe((data) => {
+          this.toastr.info('Cliente fue editado correctamente !!');
+          this.router.navigate(['/listar-cliente']);
         });
-      });
+    } else {
+      this._clienteService
+        .guardarCliente(CLIENTE)
+        .subscribe((data) => {
+          this.toastr.success('Cliente fue creado correctamente !!');
+          this.router.navigate(['/listar-cliente']);
+        });
+    }
   }
-}
 
+  
 
+  editCliente() {
+    if (this.dni !== null) {
+      this.titulo = 'Editar cliente';
+      this._clienteService
+        .obtenerCliente(this.dni)
+        .subscribe((data) => {
+          this.clienteForm.setValue({
+            dni: data._dni,
+            nombre: data._nombre,
+            edad: data._edad
+            
+          });
+        });
+    }
+  }
 }

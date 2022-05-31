@@ -27,6 +27,8 @@ const routes: Routes = [
   {path: 'crear-portatil', component: CrearPortatilComponent},
   {path: 'crear-movil', component: CrearMovilComponent},
   {path: 'editar-movil/:codProducto', component: CrearMovilComponent},
+  {path: 'editar-portatil/:codProducto', component: CrearPortatilComponent},
+  {path: 'editar-sobremesa/:codProducto', component: CrearSobremesaComponent},
   {path: 'listar-producto', component: ListarProductoComponent},
   {path: 'home', component: HomeComponent},
   {path: 'listar-cliente', component: ListarClienteComponent},

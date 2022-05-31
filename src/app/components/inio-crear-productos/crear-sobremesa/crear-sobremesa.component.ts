@@ -37,7 +37,7 @@ export class CrearSobremesaComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    
+    this.editSobremesa();
   }
 
   agregarProductoSobremesa(){
@@ -52,13 +52,45 @@ export class CrearSobremesaComponent implements OnInit {
     };
 
     
-      this._productoService.crearSobremesa(SOBREMESA).subscribe((data) => {
-          console.log(SOBREMESA)
-          console.log(data)
-          this.toastr.success('Equipo sobremesa creado con exito');
+    if (this.codProducto !== null) {
+      this._productoService
+        .editarSobremesa(this.codProducto, SOBREMESA)
+  
+        .subscribe((data) => {
+          console.log(SOBREMESA);
+          this.toastr.success('Sobremesa editado con exito !!');
           this.router.navigate(['/listar-producto']);
         });
-  
-  }
-
+       
+    } else {
+      this._productoService
+        .crearSobremesa(SOBREMESA)
+        .subscribe((data) => {
+          this.toastr.success('Sobremesa creado con exito !!');
+          this.router.navigate(['/listar-producto']);
+        });
+        
+    }
 }
+
+editSobremesa() {
+  if (this.codProducto !== null) {
+    this.titulo = 'Editar Sobremesa';
+    this._productoService
+      .obtenerProducto(this.codProducto)
+      .subscribe((data) => {
+        console.log(data)
+        this.productoSobremesaForm.setValue({
+        codProducto: data._codProducto,
+        nombre: data._nombre,
+        modelo: data._modelo,
+        categoria: data._categoria,
+        gama:data._gama,
+        precio: data._precio,
+        tipoPlaca: data._tipoPlaca
+        });
+      });
+  }
+}
+
+  }

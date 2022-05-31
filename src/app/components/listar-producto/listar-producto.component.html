@@ -2,7 +2,7 @@
 <div class ="container mt-5">
 
    <div class="row">
-       <div class="col-lg-8 offset-lg-2">
+       <div class="col-lg-9 offset-lg-2">
         <div class="card">
             <div class="card-body text-center">
                 <span class="titulo">Listado de producto</span>
@@ -34,7 +34,9 @@
                         <td>{{ producto._pantalla }}</td>
                         <td>{{ producto._bateria }}</td>
                         <td><i (click)="eliminarProducto(producto._codProducto)" class="fa-solid fa-trash"></i>
-                          <i [routerLink]="['/editar-movil', producto._codProducto]" class="fa-solid fa-file-pen"></i>
+                          <i *ngIf="producto._categoria == 'Movil'" [routerLink]="['/editar-movil', producto._codProducto]" class="fa-solid fa-file-pen"></i>
+                          <i *ngIf="producto._categoria == 'Portatil'" [routerLink]="['/editar-portatil', producto._codProducto]" class="fa-solid fa-file-pen"></i>
+                          <i *ngIf="producto._categoria == 'Sobremesa'" [routerLink]="['/editar-sobremesa', producto._codProducto]" class="fa-solid fa-file-pen"></i>
                         </td>
                       </tr>
                     </tbody>

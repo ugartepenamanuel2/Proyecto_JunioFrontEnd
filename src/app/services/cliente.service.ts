@@ -31,8 +31,13 @@ guardarCliente(CLIENTE: tCliente): Observable<any> {
 
 obtenerCliente(dni: string): Observable<any> {
 
-  return this.http.get(this.url + '/cliente/editarCliente/' + dni);
+  return this.http.get(this.url + '/cliente/listarClientes/' + dni);
 
+}
+
+
+editCliente(dni: string, CLIENTE: tCliente):Observable<any>{
+  return this.http.put(this.url + '/cliente/editarCliente/' + dni, CLIENTE);
 }
 
 
