@@ -33,6 +33,8 @@ const routes: Routes = [
   {path: 'editar-movil/:codProducto', component: CrearMovilComponent},
   {path: 'editar-portatil/:codProducto', component: CrearPortatilComponent},
   {path: 'editar-sobremesa/:codProducto', component: CrearSobremesaComponent},
+  {path: 'editar-informatico/:dni', component: CrearInformaticoComponent},
+  {path: 'editar-dependiente/:dni', component: CrearDependienteComponent},
   {path: 'listar-producto', component: ListarProductoComponent},
   {path: 'home', component: HomeComponent},
   {path: 'listar-cliente', component: ListarClienteComponent},

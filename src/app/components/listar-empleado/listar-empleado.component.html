@@ -16,19 +16,25 @@
                          <th scope="col">Edad</th>
                          <th scope="col">Especialidades</th>
                          <th scope="col">Sueldo</th>
+                         <th scope="col">Horario</th>
+                         <th scope="col">Num_reparaciones</th>
                          <th scope="col"></th>
                        </tr>
                      </thead>
                      <tbody>
-                       <tr>
-                         <th scope="row">49132809W</th>
-                         <td>Manuel Pablo</td>
-                         <td>19</td>
-                         <td>Informatico</td>
-                         <td>1900</td>
-                         <td><i class="fa-solid fa-trash"></i>
-                           <i class="fa-solid fa-file-pen"></i>
-                         </td>
+                       <tr *ngFor="let empleado of listEmpleado">
+                         <th scope="row">{{ empleado._dni }}</th>
+                         <td>{{ empleado._nombre }}</td>
+                         <td>{{ empleado._edad }}</td>
+                         <td>{{ empleado._especialidades }}</td>
+                         <td>{{ empleado._sueldo }}</td>
+                         <td>{{ empleado._horario }}</td>
+                         <td>{{ empleado._num_reparaciones }}</td>
+                         <td><i (click)="eliminarEmpleado(empleado._dni)" class="fa-solid fa-trash"></i>
+                          <i *ngIf="empleado._especialidades == 'Informatico'" [routerLink]="['/editar-informatico', empleado._dni]" class="fa-solid fa-file-pen"></i>
+                          <i *ngIf="empleado._especialidades == 'Dependiente'" [routerLink]="['/editar-dependiente', empleado._dni]" class="fa-solid fa-file-pen"></i>
+                          
+                        </td>
                        </tr>
                      </tbody>
                    </table>

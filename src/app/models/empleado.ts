@@ -29,3 +29,31 @@ export type tEmpleado = {
     num_reparaciones: string,
     horario: string
 }
+export type tEmpleado2 = {
+    _dni:string,
+    _nombre: string,
+    _edad: number,
+    _especialidades: string,
+    _sueldo: number,
+    _num_reparaciones: string,
+    _horario: string
+}
+
+export type tInformatico = {
+    dni:string,
+    nombre: string,
+    edad: number,
+    especialidades: string,
+    sueldo: number,
+    num_reparaciones: string
+    
+}
+export type tDependiente = {
+    dni:string,
+    nombre: string,
+    edad: number,
+    especialidades: string,
+    sueldo: number,
+    horario: string
+    
+}

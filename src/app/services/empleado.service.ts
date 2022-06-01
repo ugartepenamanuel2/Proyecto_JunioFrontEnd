@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tEmpleado } from '../models/empleado';
+import { tDependiente, tEmpleado, tInformatico } from '../models/empleado';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +12,46 @@ export class EmpleadoService {
 
   constructor(private http: HttpClient) { }
 
-  crearInformatico(INFORMATICO: tEmpleado): Observable<any> {
+  crearInformatico(INFORMATICO: tInformatico): Observable<any> {
 
     return this.http.post(this.url + '/empleado/crearInformatico' , INFORMATICO);
   }
 
-  editarInformatico(dni: string, SOBREMESA: tEmpleado):Observable<any>{
-    return this.http.put(this.url + '/empleado/editarInformatico' + dni, SOBREMESA);
+  crearDependiente(DEPENDIENTE: tDependiente): Observable<any> {
+
+    return this.http.post(this.url + '/empleado/crearDependiente' , DEPENDIENTE);
   }
+
+  editarDependiente(dni: string,  DEPENDIENTE: tDependiente ):Observable<any>{
+    return this.http.put(this.url + '/empleado/editarDependiente/' + dni, DEPENDIENTE);
+  }
+
+
+
+  editarInformatico(dni: string,  INFORMATICO: tInformatico ):Observable<any>{
+    return this.http.put(this.url + '/empleado/editarInformatico/' + dni, INFORMATICO);
+  }
+
+
+
+
+  obtenerEmpleado(): Observable<any> {
+    return this.http.get(this.url + '/listarEmpleado/' );
+  }
+
+
+
+  obtenerUnEmpleado(dni: String): Observable<any> {
+    return this.http.get(this.url + '/listarEmpleado/' + dni);
+  }
+
+
+
+
+  eliminarEmpleado(dni: String): Observable<any> {
+
+    return this.http.delete(this.url + '/borrarEmpleado/' + dni);
+  
+  }
+
 }

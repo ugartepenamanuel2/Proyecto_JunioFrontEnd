@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { tEmpleado } from 'src/app/models/empleado';
+import {  tInformatico } from 'src/app/models/empleado';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 
 @Component({
@@ -26,25 +26,28 @@ export class CrearInformaticoComponent implements OnInit {
         especialidades: ['', Validators.required],
         sueldo: ['', Validators.required],
         num_reparaciones: ['', Validators.required],
-        horario: ['', Validators.required],
+       
     })
-    this.dni = this.aRouter.snapshot.paramMap.get('_dni');
+    this.dni = this.aRouter.snapshot.paramMap.get('dni');
   }
   ngOnInit(): void {
+    this.editarInformatico();
   }
 
 agregarEmpleadoInformatico(){
 
-  const INFORMATICO: tEmpleado = {
+  const INFORMATICO: tInformatico = {
     dni: this.empleadoInformatico.get('dni')?.value,
     nombre: this.empleadoInformatico.get('nombre')?.value,
     edad: this.empleadoInformatico.get('edad')?.value,
     especialidades: this.empleadoInformatico.get('especialidades')?.value,
     sueldo: this.empleadoInformatico.get('sueldo')?.value,
     num_reparaciones: this.empleadoInformatico.get('num_reparaciones')?.value,
-    horario: this.empleadoInformatico.get('horario')?.value,
+
+    
   };
 
+  
 
   if (this.dni !== null) {
     this._empleadoService
@@ -70,15 +73,16 @@ editarInformatico() {
   if (this.dni !==  null) {
     this.titulo = 'Editar Informatico';
     
-    this._empleadoService.crearInformatico(this.dni).subscribe((data) => {
+    this._empleadoService.obtenerUnEmpleado(this.dni).subscribe((data) => {
       console.log(data)
         this.empleadoInformatico.setValue({
           dni:data._dni,
           nombre: data._nombre,
           edad: data._edad,
           especialidades: data._especialidades,
+          sueldo: data._sueldo,
           num_reparaciones: data._num_reparaciones,
-          horario: data._horario,
+         
         });
       });
   }
