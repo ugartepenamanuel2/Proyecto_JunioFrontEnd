@@ -33,7 +33,9 @@ export class EmpleadoService {
   }
 
 
-
+  obtenerEmpleadoSueldo(): Observable<any> {
+    return this.http.get(this.url + '/calculoSueldoEmpleados' );
+  }
 
   obtenerEmpleado(): Observable<any> {
     return this.http.get(this.url + '/listarEmpleado/' );

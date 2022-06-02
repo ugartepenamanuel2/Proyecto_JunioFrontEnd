@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 //Componentes
 import { AppComponent } from './app.component';
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
@@ -24,6 +25,9 @@ import { CrearMovilComponent } from './components/inio-crear-productos/crear-mov
 import { InioCrearEmpleadosComponent } from './components/inio-crear-empleados/inio-crear-empleados.component';
 import { CrearInformaticoComponent } from './components/inio-crear-empleados/crear-informatico/crear-informatico.component';
 import { CrearDependienteComponent } from './components/inio-crear-empleados/crear-dependiente/crear-dependiente.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { ChartModule } from 'angular-highcharts';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +48,10 @@ import { CrearDependienteComponent } from './components/inio-crear-empleados/cre
     CrearMovilComponent,
     InioCrearEmpleadosComponent,
     CrearInformaticoComponent,
-    CrearDependienteComponent
+    CrearDependienteComponent,
+    EstadisticasComponent,
+
+ 
   ],
   imports: [
     BrowserModule,
@@ -53,9 +60,13 @@ import { CrearDependienteComponent } from './components/inio-crear-empleados/cre
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ChartModule
+  
+
   ],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

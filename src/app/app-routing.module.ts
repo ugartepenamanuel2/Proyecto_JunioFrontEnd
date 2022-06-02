@@ -4,6 +4,7 @@ import { CrearClienteComponent } from './components/crear-cliente/crear-cliente.
 
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
 import { CrearVentaComponent } from './components/crear-venta/crear-venta.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { HomeComponent } from './components/home/home.component';
 import { CrearDependienteComponent } from './components/inio-crear-empleados/crear-dependiente/crear-dependiente.component';
 import { CrearInformaticoComponent } from './components/inio-crear-empleados/crear-informatico/crear-informatico.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
   {path: 'listar-empleado', component: ListarEmpleadoComponent},
   {path: 'editar-cliente/:dni', component: CrearClienteComponent},
   {path: 'editar-venta/:_cod_compra', component: CrearVentaComponent},
-  
+  {path: 'estadistica', component: EstadisticasComponent},
   {path: 'crear-cliente', component: CrearClienteComponent},
   {path: 'crear-venta', component: CrearVentaComponent},
 

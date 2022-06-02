@@ -51,7 +51,7 @@ export class CrearPortatilComponent implements OnInit {
       this._productoService
         .editarPortatil(this.codProducto, PORTATIL)
         .subscribe((data) => {
-          this.toastr.success('Portatil editado con exito !!');
+          this.toastr.info('Portatil editado con exito !!');
           this.router.navigate(['/listar-producto']);
         });
        

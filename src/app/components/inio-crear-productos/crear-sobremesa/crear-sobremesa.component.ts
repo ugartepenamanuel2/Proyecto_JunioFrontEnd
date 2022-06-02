@@ -58,7 +58,7 @@ export class CrearSobremesaComponent implements OnInit {
   
         .subscribe((data) => {
           console.log(SOBREMESA);
-          this.toastr.success('Sobremesa editado con exito !!');
+          this.toastr.info('Sobremesa editado con exito !!');
           this.router.navigate(['/listar-producto']);
         });
        

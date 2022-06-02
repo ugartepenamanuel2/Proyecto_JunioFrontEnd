@@ -4,7 +4,7 @@
     <div class = "col-lg-6 offset-lg-3"> 
     <div class = "card"> 
     <div class = "card-body text-center">
-    <span class = "titulo"> {{ titulo | uppercase}}</span> 
+    <span class = "titulo"> {{ titulo }}</span> 
     <form class= "mt-3" [formGroup]="empleadoInformatico" (ngSubmit)="agregarEmpleadoInformatico()">
     
         <div class="mb-3">
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="mb-3">
-            <input type="text" formControlName="num_reparaciones"
+            <input type="number" formControlName="num_reparaciones"
             class="form-control form-control-lg" placeholder="Num_reparaciones">
             <div class="text-danger" *ngIf="empleadoInformatico.get('num_reparaciones')?.hasError('required') && empleadoInformatico.get('num_reparaciones')?.touched">
                 <span>El numero de reparaciones es un campo <strong>obligatorio</strong></span>

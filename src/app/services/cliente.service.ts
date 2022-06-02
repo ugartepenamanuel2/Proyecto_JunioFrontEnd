@@ -12,6 +12,9 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
+// Funciones que usan las rutas de Backend //
+
+
   getCliente(): Observable<any> {
     return this.http.get(this.url + '/cliente/listarCliente');
 

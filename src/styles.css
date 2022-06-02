@@ -7,3 +7,6 @@ body {background: #373B44;  /* fallback for old browsers */
         font-size: 1.8rem;
         font-family: 'Radio Canada', sans-serif;
     }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
