@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {APP_BASE_HREF} from '@angular/common';
+
 //Componentes
 import { AppComponent } from './app.component';
 import { CrearProductoComponent } from './components/crear-producto/crear-producto.component';
@@ -65,7 +67,8 @@ import { ChartModule } from 'angular-highcharts';
   
 
   ],
-  providers: [],
+  providers: [{provide:
+    APP_BASE_HREF, useValue: '/home'}],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

@@ -27,7 +27,7 @@
                          <td>{{ empleado._nombre }}</td>
                          <td>{{ empleado._edad }}</td>
                          <td>{{ empleado._especialidades }}</td>
-                         <td>{{ empleado._sueldo }}</td>
+                         <td>{{ empleado._sueldo | currency: ' € ' }}</td>
                          <td>{{ empleado._horario }}</td>
                          <td>{{ empleado._num_reparaciones }}</td>
                          <td><i (click)="eliminarEmpleado(empleado._dni)" class="fa-solid fa-trash"></i>

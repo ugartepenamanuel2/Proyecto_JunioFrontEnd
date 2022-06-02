@@ -9,7 +9,7 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
   styleUrls: ['./estadisticas.component.css']
 })
 export class EstadisticasComponent implements OnInit {
-
+ //   Array empleados  //
     arrayEmpleados: Salario [] = []
 
   Highcharts: typeof Highcharts = Highcharts;
@@ -60,13 +60,15 @@ export class EstadisticasComponent implements OnInit {
   empleados(){
 
     this.empleadoService.obtenerEmpleadoSueldo().subscribe((data) =>{
+      // Cogemos el array  y le mete dni, nombre y sueldo //
         this.arrayEmpleados = data.map((salary:any)=>{
           return new Salario(salary._dni,salary._nombre,salary._sueldo)
           
         })
         
-  
+          // Posteamos el sueldos//
         const dataSeries = this.arrayEmpleados.map((x: Salario)=> x._sueldo)
+         // Posteamos los nombres//
         const dataCategorias = this.arrayEmpleados.map((x: Salario)=> x._nombre)
   
         this.chartOptions.title["text"] = "Salario con Impuestos"
@@ -74,7 +76,7 @@ export class EstadisticasComponent implements OnInit {
         this.chartOptions.xAxis["categories"] = dataCategorias
         this.chartOptions.series["name"] = "Empleados"
 
-
+// Lo ponemos en el grafico empleados//
 
     Highcharts.chart("empleados",this.chartOptions)
    })

@@ -29,9 +29,9 @@ export class ListarProductoComponent implements OnInit {
     })
     }
 
-    eliminarProducto(id:any) {
+    eliminarProducto(codProducto:any) {
 
-this._productoService.eliminarProductos(id).subscribe(data => {
+this._productoService.eliminarProductos(codProducto).subscribe(data => {
   this.toastr.error('El producto fue eliminado correctamente', 'Producto Eliminado');
   this.listarProducto();
 }, error => {

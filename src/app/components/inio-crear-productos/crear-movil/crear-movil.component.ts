@@ -14,7 +14,7 @@ export class CrearMovilComponent implements OnInit {
   productoMovilForm: FormGroup;
   titulo = 'Crear movil';
   codProducto: string | null;
-
+// contructor : formulario, rutas, mensajes de info, servicios y rutas activas //
   constructor(private fb: FormBuilder,
     private router: Router, private toastr: ToastrService,
     private _productoService: ProductoService,
@@ -29,8 +29,11 @@ export class CrearMovilComponent implements OnInit {
         pantalla: ['', Validators.required],
   
       })
+      // Obtenemos cod_Producto que le estamos pasando //
       this.codProducto = this.aRouter.snapshot.paramMap.get('codProducto');
     }
+
+// Para ver la función que se va iniciar  primero   //
 
   ngOnInit(): void {
     this.editMovil();
@@ -46,7 +49,7 @@ export class CrearMovilComponent implements OnInit {
       precio: this.productoMovilForm.get('precio')?.value,
       pantalla: this.productoMovilForm.get('pantalla')?.value,
     };
-
+ // Si producto está vacío no entra y va a la otra //
     if (this.codProducto !== null) {
       this._productoService
         .editarMovil(this.codProducto, MOVIL)
@@ -54,11 +57,12 @@ export class CrearMovilComponent implements OnInit {
           this.toastr.success('Movil editado con exito !!');
           this.router.navigate(['/listar-producto']);
         });
-       
+       // Crear el movil//
     } else {
       this._productoService
         .crearMovil(MOVIL)
         .subscribe((data) => {
+          // Mensaje de Info//
           this.toastr.success('Movil creado con exito !!');
           this.router.navigate(['/listar-producto']);
         });
@@ -66,13 +70,21 @@ export class CrearMovilComponent implements OnInit {
     }
 }
 
+
+// Editar Movil //
+
 editMovil() {
+  // Si producto está vacío no entra y va a la otra //
   if (this.codProducto !== null) {
+    // Cambiamos el titulo //
     this.titulo = 'Editar Movil';
     this._productoService
+
+  // Le pedimos un solo producto //
       .obtenerProducto(this.codProducto)
       .subscribe((data) => {
         console.log(data)
+        // Le pasamos los datos al formulario //
         this.productoMovilForm.setValue({
         codProducto: data._codProducto,
         nombre: data._nombre,

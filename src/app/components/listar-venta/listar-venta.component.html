@@ -25,7 +25,7 @@
                          <td>{{venta._comprador}}</td>
                          <td>{{venta._vendedor}}</td>
                          <td>{{venta._producto}}</td>
-                         <td>{{venta._precio}}</td>
+                         <td>{{venta._precio | currency: ' € '}}</td>
                          <td><i (click)="eliminarVenta(venta._cod_compra)" class="fa-solid fa-trash"></i>
                            <i [routerLink]="['/editar-venta', venta._cod_compra]"class="fa-solid fa-file-pen"></i>
                          </td>

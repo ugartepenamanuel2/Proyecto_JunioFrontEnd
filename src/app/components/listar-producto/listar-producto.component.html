@@ -2,7 +2,7 @@
 <div class ="container mt-5">
 
    <div class="row">
-       <div class="col-lg-9 offset-lg-2">
+       <div class="col-lg-8 offset-lg-2">
         <div class="card">
             <div class="card-body text-center">
                 <span class="titulo">Listado de productos</span>
@@ -29,7 +29,7 @@
                         <td>{{ producto._modelo }}</td>
                         <td>{{ producto._categoria }}</td>
                         <td>{{ producto._gama }}</td>
-                        <td>{{ producto._precio }}</td>
+                        <td>{{ producto._precio | currency: ' € ' }}</td>
                         <td>{{ producto._tipoPlaca }}</td>
                         <td>{{ producto._pantalla }}</td>
                         <td>{{ producto._bateria }}</td>
